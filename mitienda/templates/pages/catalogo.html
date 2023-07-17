@@ -1,0 +1,40 @@
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+
+
+<!-- <h1>Todos los polerones</h1> -->
+
+<body>
+    
+    <div class="container-fluid card_polerones d-flex alingn-items-center justify-content-end">
+        <div class="row row-col-4 text-center g-3">
+            {% for poleron in polerones %}
+            <div class="col">
+                <div class="card" style="width: 17rem;">
+                    <img src="{{poleron.imagen.url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Marca: <span>{{poleron.marca}}</span></h5>
+                    </div>
+                    
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Talla: {{poleron.talla}}</li>
+                      <li class="list-group-item">Precio: ${{poleron.precio}}</li>
+                      <li class="list-group-item">Stock: {{poleron.stock}}</li>
+                    </ul>
+                    <div class="card-body">
+                      <a href="{% url 'detail_catalogo' id=poleron.id %}" class="card-link"><button class="btn btn-primary">Detalle</button></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    
+</body>
+  
+
+{% endblock %}
+
+

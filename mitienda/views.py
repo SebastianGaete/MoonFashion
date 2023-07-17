@@ -14,3 +14,19 @@ def contact(request):
 
 def about(request):
     return render(request, 'pages/about.html')
+
+
+def catalogo(request):
+    polerones: object = Poleron.objects.all()
+    CONTEXT: dict = {
+        'polerones':polerones
+    }
+    return render(request, 'pages/catalogo.html', CONTEXT)
+
+
+def detail_catalogo(request, id):
+    detalle: object = Poleron.objects.get(id=id)
+    CONTEXT: dict ={
+        'detalle':detalle
+    } 
+    return render(request, 'pages/detail_catalogo.html', CONTEXT)

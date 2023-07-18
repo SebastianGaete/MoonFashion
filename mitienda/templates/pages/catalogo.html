@@ -5,10 +5,17 @@
 
 <!-- <h1>Todos los polerones</h1> -->
 
-<body>
-    
+
+<section>
+  
+    <div class="container-fluid">
+      <div class="row text-center catalogo_titulo p-3">
+        <h1>Polerones Unisex</h1>
+      </div>
+    </div>
+
     <div class="container-fluid card_polerones d-flex alingn-items-center justify-content-end">
-        <div class="row row-col-4 text-center g-3">
+                <div class="row row-col-4 text-center g-3">
             {% for poleron in polerones %}
             <div class="col">
                 <div class="card" style="width: 17rem;">
@@ -30,10 +37,7 @@
             {% endfor %}
         </div>
     </div>
-    
-    
-</body>
-  
+  </section>
 
 {% endblock %}
 

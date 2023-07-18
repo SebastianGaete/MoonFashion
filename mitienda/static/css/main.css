@@ -127,15 +127,35 @@
 }
 
 
-/* POLERONES */
+/* CATALOGO POLERONES */
 
 .card_polerones{
-    margin: 100px 0 100px 0;
+    margin: 10px 0 100px 0;
 }
 
 .row{
-    margin-left: 20px
+    margin-left: 20px;
 }
+
+
+/* DETALLE POLERON */
+.contenedor_imagen img{
+    border-right: solid black;
+    width: 400px;
+}
+
+@media (max-width: 1200px) {
+    .contenedor_imagen img{
+        border-right: none;
+    }
+}
+@media (max-width: 490px) {
+    .contenedor_imagen img{
+        width: 200px;
+    }
+}
+
+
 
 /* MEDIAQUERIS */
 @media (max-width: 767px) {
@@ -149,4 +169,6 @@
     }
 }
 
+
+/* FORMULARIO CONTACTO */
 

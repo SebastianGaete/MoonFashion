@@ -2,6 +2,59 @@
 
 {% block content %}
 
-<h1>Formulario de contacto</h1>
+
+
+	<div class="d-flex justify-content-center m-4 bg-img">
+		<div class="card col-sm-5 p-3">
+			<div class="mb-3">
+				<h4>Contacto</h4>
+			</div>
+	
+			<div class="mb-2">
+				<form  method="POST">
+				{% csrf_token %}
+	
+					<div class="mb-2">
+						<label for="nombre">Nombre</label>
+						<input type="text" class="form-control" name="nombre" id="nombre" required>
+					</div>
+	
+					<div class="mb-2">
+						<label for="apellido">Apellido</label>
+						<input type="text" class="form-control" name="apellido" id="apellido" required>
+					</div>
+	
+					<div class="mb-2">
+						<label for="telefono">Teléfono</label>
+						<input type="text" class="form-control" name="telefono" id="telefono" placeholder="9 99442288">
+					</div>
+	
+					<div class="mb-2">
+						<label for="email">Email</label>
+						<input type="email" class="form-control" name="email" id="email" placeholder="nombre@gmail.com" required>
+					</div>
+					
+					<div class="mb-2">
+						<label for="tipo_entrega">Envío</label>
+						<input type="text" class="form-control" name="tipo_entrega" id="tipo_entrega" placeholder="Envío domicilio / Entrega presencial" required>
+					</div>
+	
+					<div class="mb-2">
+						<label for="mensaje">Mensaje</label>
+						<textarea name="mensaje" id="mensaje"rows="3" class="border-1 form-control"></textarea>
+					</div>
+	
+					<div class="mb-2 text-center">
+						<input type="submit" class="btn btn-primary">
+					</div>
+	
+				</form>
+			</div>
+		</div>
+	
+	</div>
+
+
+
 
 {% endblock %}

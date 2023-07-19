@@ -48,3 +48,4 @@ def contact(request):
 def envio_formulario(request):
     return render(request, 'pages/envio_formulario.html')
 
+

@@ -4,29 +4,30 @@
     <nav class="navbar navbar-expand-md bg-black">
         <div class="container-fluid">
             <a href="{% url 'home' %}"><img src="{% static 'logo.png'%}" alt="logo" class="logo_nav"></a>
-
+    
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+    
             <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarNav">
-
+    
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{% url 'home' %}">
                             <i class="bi bi-house-door btn boton_home"></i>
                         </a>
                     </li>
-
+    
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about' %}">Acerca de mi</a>
+                        <a class="nav-link" href="{% url 'about' %}">Nosotros</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contáctanos</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact' %}">Contactame</a>
-                    </li>
                 </ul>
-
+    
             </div>
         </div>
       </nav>
@@ -34,4 +35,6 @@
 
 
 
-  
+
+
+

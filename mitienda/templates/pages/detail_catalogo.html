@@ -13,10 +13,10 @@
             </div>
                 <div class="col-lg-7 col-md-5">
                     <div class="container  contenedor_info">
-                        <table class="table table-md">
+                        <table class="table table-md table-striped">
 
                             <thead class="cabecera_tabla">
-                            <h3>Detalle de prenda</h3>
+                            <h3 class="texto_encabezado m-4">Detalle de prenda</h3>
                             </thead>
 
                             <tbody>
@@ -30,7 +30,7 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Precio</th>
-                                    <td colspan="2" class="table-active">{{detalle.precio}}</td>
+                                    <td colspan="2" class="table-active">${{detalle.precio}}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">stock</th>
@@ -44,7 +44,7 @@
                         </table>
                     </div>
                 <div class="col p-4">
-                    <a href="{% url 'catalogo' %}"><button class="btn btn-warning">Volver al catálogo</button></a>  
+                    <a href="{% url 'catalogo' %}"><button class="btn btn-warning m-2">Volver al catálogo</button></a> 
                     <a href="{% url 'contact' %}"><button class="btn btn-success">Contactar</button></a>   
                 </div>
             </div>

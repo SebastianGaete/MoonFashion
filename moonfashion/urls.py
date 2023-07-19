@@ -24,7 +24,7 @@ from mitienda import urls
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('', include('mitienda.urls'))
 ] 
 

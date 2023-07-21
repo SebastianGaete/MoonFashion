@@ -4,6 +4,7 @@
     <nav class="navbar navbar-expand-md bg-black">
         <div class="container-fluid">
             <a href="{% url 'home' %}"><img src="{% static 'logo.png'%}" alt="logo" class="logo_nav"></a>
+            
     
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -26,6 +27,12 @@
                         <a class="nav-link" href="{% url 'contact' %}">Contáctanos</a>
                     </li>
 
+                    {% if user.is_superuser %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'admin:index' %}">Agregar</a>
+                        </li>
+                    {% endif %}
+                    
                 </ul>
     
             </div>

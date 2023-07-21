@@ -77,18 +77,9 @@
     font-size: 30px;
 }
 
-.boton{
-    background-color: rgb(234, 238, 189);
-    border-radius: 10px;
-    padding: 10px;
-    border: none;
-    width: 200px;
-    font-family: var(--fuente);
-    font-weight: bold;
-}
-
-.boton:hover{
-    background-color: rgb(220, 230, 110);
+.navegacion_catalogo{
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -137,7 +128,7 @@
 }
 
 
-/* CATALOGO POLERONES */
+/* CATALOGO */
 
 .card_polerones{
     margin: 10px 0 100px 0;
@@ -161,8 +152,8 @@
 
 /* DETALLE POLERON */
 .contenedor_imagen img{
-    border-right: solid black;
     width: 400px;
+    background-color: black;
 }
 
 
@@ -198,7 +189,6 @@
     justify-content: space-evenly;
     gap: 30px;
     margin-bottom: 17px;
-    /* margin-top: 25px; */
 }
 
 @media (max-width: 880px) {

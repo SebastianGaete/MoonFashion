@@ -30,17 +30,22 @@ def detail_catalogo(request, id):
 
 def contact(request):
     if request.method == 'POST':
-        nombre = request.POST['nombre']
-        apellido = request.POST['apellido']
-        telefono = request.POST['telefono']
-        email = request.POST['email']
-        tipo_entrega = request.POST['tipo_entrega']
-        mensaje = request.POST['mensaje']
+        try:
+            nombre = request.POST['nombre']
+            apellido = request.POST['apellido']
+            telefono = request.POST['telefono']
+            email = request.POST['email']
+            tipo_entrega = request.POST['tipo_entrega']
+            mensaje = request.POST['mensaje']
 
-        interesado = Interesado.objects.create(nombre=nombre, apellido=apellido, telefono=telefono, email=email, tipo_entrega= tipo_entrega, mensaje=mensaje)
-        interesado.save()
+            interesado = Interesado.objects.create(nombre=nombre, apellido=apellido, telefono=telefono, email=email, tipo_entrega= tipo_entrega, mensaje=mensaje)
+            interesado.save()
+            return redirect('envio_formulario') # SOLO SE INDICA LA PAGE A LA CUAL VAMOS A REDIRECCIONAR
+        
+        except:
+            return HttpResponse('Error en los campos')
 
-        return redirect('envio_formulario') # SOLO SE INDICA LA PAGE A LA CUAL VAMOS A REDIRECCIONAR
+    
     else:
          return render(request, 'pages/contact.html')
     

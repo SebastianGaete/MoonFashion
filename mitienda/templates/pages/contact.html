@@ -8,6 +8,7 @@
 		<div class="card col-sm-5 p-3">
 			<div class="mb-3">
 				<h4>Contacto</h4>
+				<p class="text-center text-danger">{{ error }}</p>
 			</div>
 	
 			<div class="mb-2">
@@ -16,12 +17,12 @@
 	
 					<div class="mb-2">
 						<label for="nombre">Nombre</label>
-						<input type="text" class="form-control" name="nombre" id="nombre" required>
+						<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" required>
 					</div>
 	
 					<div class="mb-2">
 						<label for="apellido">Apellido</label>
-						<input type="text" class="form-control" name="apellido" id="apellido" required>
+						<input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido" required>
 					</div>
 	
 					<div class="mb-2">
@@ -47,7 +48,7 @@
 					<div class="mb-2 text-center">
 						<input type="submit" class="btn btn-primary">
 					</div>
-	
+
 				</form>
 			</div>
 		</div>

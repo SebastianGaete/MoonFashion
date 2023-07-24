@@ -13,22 +13,28 @@ def about(request):
 
 def contact(request):
     if request.method == 'POST':
-        try:
-            nombre = request.POST['nombre']
-            apellido = request.POST['apellido']
-            telefono = request.POST['telefono']
-            email = request.POST['email']
-            tipo_entrega = request.POST['tipo_entrega']
-            mensaje = request.POST['mensaje']
 
-            interesado = Interesado.objects.create(nombre=nombre, apellido=apellido, telefono=telefono, email=email, tipo_entrega= tipo_entrega, mensaje=mensaje)
-            interesado.save()
-            return redirect('envio_formulario') # SOLO SE INDICA LA PAGE A LA CUAL VAMOS A REDIRECCIONAR
+        if len(request.POST['telefono']) == 10:
+            try:
+                nombre = request.POST['nombre']
+                apellido = request.POST['apellido']
+                telefono = request.POST['telefono']
+                email = request.POST['email']
+                tipo_entrega = request.POST['tipo_entrega']
+                mensaje = request.POST['mensaje']
+
+                interesado = Interesado.objects.create(nombre=nombre, apellido=apellido, telefono=telefono, email=email, tipo_entrega= tipo_entrega, mensaje=mensaje)
+                interesado.save()
+                return redirect('envio_formulario') # SOLO SE INDICA LA PAGE A LA CUAL VAMOS A REDIRECCIONAR
         
-        except:
-            return HttpResponse('Error en los campos')
-
-    
+            except:
+                return render(request, 'pages/contact.html', {
+                    'error': 'Porfavor procure ingresar los datos en el formato que se solicitan.'
+                })
+        else:
+            return render(request, 'pages/contact.html', {
+                    'error': 'Porfavor procure ingresar los datos en el formato que se solicitan.'
+                })
     else:
          return render(request, 'pages/contact.html')
     

@@ -5,7 +5,7 @@ from django.db import models
 class Interesado(models.Model):
     nombre = models.CharField(max_length=200, verbose_name='Nombre')
     apellido = models.CharField(max_length=200, verbose_name='Apellido')
-    telefono = models.IntegerField(verbose_name='Número de teléfono')
+    telefono = models.CharField(verbose_name='Número de teléfono')
     email = models.EmailField(verbose_name='Email')
     tipo_entrega = models.CharField(max_length=100, verbose_name='Tipo de entrega')
     mensaje = models.TextField(verbose_name='Mensaje', default='Sin mensaje')

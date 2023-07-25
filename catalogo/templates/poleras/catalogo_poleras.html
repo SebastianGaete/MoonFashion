@@ -13,25 +13,26 @@
     </div>
 
     <div class="container-fluid card_polerones d-flex alingn-items-center justify-content-end">
-                <div class="row row-col-4 text-center g-3">
+        <div class="row row-col-4 text-center g-3">
             {% for polera in poleras %}
-            <div class="col flex">
-                <div class="card" style="width: 17rem;">
-                    <img src="{{polera.imagen.url}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Marca: <span class="span_detalle">{{polera.marca}}</span></h5>
-                    </div>
-                    
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Talla: <span class="span_detalle">{{polera.talla}}</span></li>
-                      <li class="list-group-item">Precio: <span class="span_detalle">${{polera.precio}}</span></li>
-                      <li class="list-group-item">Stock: <span class="span_detalle">{{polera.stock}}</span></li>
-                    </ul>
-                    <div class="card-body">
-                      <a href="{% url 'detail_polera' id=polera.id %}" class="card-link"><button class="btn btn-primary">Detalle</button></a>
-                    </div>
-                </div>
-            </div>
+              <div class="col flex">
+                  <div class="card" style="width: 17rem;">
+                      <img src="{{polera.imagen.url}}" class="card-img-top" alt="imagen polera">
+                      <div class="card-body">
+                        <h5 class="card-title">Marca: <span class="span_detalle">{{polera.marca}}</span></h5>
+                      </div>
+                      
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Talla: <span class="span_detalle">{{polera.talla}}</span></li>
+                        <li class="list-group-item">Precio: <span class="span_detalle">${{polera.precio}}</span></li>
+                        <li class="list-group-item">Stock: <span class="span_detalle">{{polera.stock}}</span></li>
+                      </ul>
+
+                      <div class="card-body">
+                        <a href="{% url 'detail_polera' id=polera.id %}" class="card-link"><button class="btn btn-primary">Detalle</button></a>
+                      </div>
+                  </div>
+              </div>
             {% endfor %}
         </div>
     </div>

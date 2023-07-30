@@ -6,27 +6,27 @@
 <section>
     <div class="container-fluid">
       <div class="row text-center catalogo_titulo p-3">
-        <h1 class="texto_encabezado">Chaquetas</h1>
+        <h1 class="texto_encabezado">{{productos.categoria}}</h1>
       </div>
     </div>
 
     <div class="container-fluid card_polerones d-flex alingn-items-center justify-content-end">
                 <div class="row row-col-4 text-center g-3">
-            {% for chaqueta in chaquetas %}
+            {% for producto in productos %}
             <div class="col flex">
                 <div class="card" style="width: 17rem;">
                     <img src="{{chaqueta.imagen.url}}" class="card-img-top" alt="imagen chaqueta">
                     <div class="card-body">
-                      <h5 class="card-title">Marca: <span class="span_detalle">{{chaqueta.marca}}</span></h5>
+                      <h5 class="card-title">Marca: <span class="span_detalle">{{producto.marca}}</span></h5>
                     </div>
                     
                     <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Talla: <span class="span_detalle">{{chaqueta.talla}}</span></li>
-                      <li class="list-group-item">Precio: <span class="span_detalle">${{chaqueta.precio}}</span></li>
-                      <li class="list-group-item">Stock: <span class="span_detalle">{{chaqueta.stock}}</span></li>
+                      <li class="list-group-item">Talla: <span class="span_detalle">{{producto.talla}}</span></li>
+                      <li class="list-group-item">Precio: <span class="span_detalle">${{producto.precio}}</span></li>
+                      <li class="list-group-item">Stock: <span class="span_detalle">{{producto.stock}}</span></li>
                     </ul>
                     <div class="card-body">
-                      <a href="{% url 'detail_chaqueta' id=chaqueta.id %}" class="card-link"><button class="btn btn-primary">Detalle</button></a>
+                      <a href="#" class="card-link"><button class="btn btn-primary">Detalle</button></a>
                     </div>
                 </div>
             </div>

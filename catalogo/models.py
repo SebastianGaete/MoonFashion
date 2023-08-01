@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Categoria(models.Model):
-    nombre = models.CharField(max_length=200, verbose_name='Nombre')
+    nombre = models.CharField(primary_key=True, max_length=100, verbose_name='Nombre')
     fecha_creacion = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creacion')
     
 
@@ -17,7 +17,7 @@ class Producto(models.Model):
         ('XL','XL'),
         ('EG','EG')
     ]
-    categoria = models.ForeignKey(Categoria, on_delete=models.RESTRICT, verbose_name='Categoria')
+    categoria = models.ForeignKey(Categoria, to_field='nombre', on_delete=models.RESTRICT, verbose_name='Categoria')
     marca = models.CharField(max_length=200, verbose_name='Marca')
     descripcion = models.TextField(blank=False, verbose_name='Descripción')
     talla = models.CharField(max_length=2, choices=TALLAS, verbose_name='Tallas')

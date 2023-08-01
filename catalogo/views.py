@@ -9,13 +9,13 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def catalogo_productos(request, producto):
     if producto == 'polerones':
-        poleron = Producto.objects.filter(categoria=2)
+        poleron = Producto.objects.filter(categoria='polerones')
         return render(request, 'catalogo_productos.html', {'productos':poleron})
     elif producto =='poleras':
-        polera = Producto.objects.filter(categoria=3)
+        polera = Producto.objects.filter(categoria='poleras')
         return render(request, 'catalogo_productos.html', {'productos':polera})
     elif producto == 'chaquetas':
-        chaqueta = Producto.objects.filter(categoria=4)
+        chaqueta = Producto.objects.filter(categoria='chaquetas')
         return render(request, 'catalogo_productos.html', {'productos':chaqueta})
     
 

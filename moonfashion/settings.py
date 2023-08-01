@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'moonfashion.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'moonfashion5',
+        'NAME': 'db_moonfashion',
         'USER':'postgres',
         'PORT':'',
         'PASSWORD': 'warcrychile123',

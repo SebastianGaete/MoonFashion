@@ -1,52 +1,27 @@
 from django.shortcuts import render
-from .models import Poleron, Chaqueta, Polera
+from .models import Categoria, Productos
 
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
 @login_required
-def catalogo_polerones(request):
-    polerones: object = Poleron.objects.all()
-    return render(request, 'polerones/catalogo_polerones.html',{
-        'polerones':polerones
-    })
+def catalogo_productos(request, producto):
+    if producto == 'polerones':
+        poleron = Productos.objects.filter(categoria=1)
+        return render(request, 'catalogo_productos.html', {'productos':poleron})
+    
+    elif producto =='poleras':
+        polera = Productos.objects.filter(categoria=2)
+        return render(request, 'catalogo_productos.html', {'productos':polera})
+    
+    elif producto == 'chaquetas':
+        chaqueta = Productos.objects.filter(categoria=3)
+        if chaqueta:
+            return render(request, 'catalogo_productos.html', {'productos':chaqueta})
+    
 
 @login_required
 def detail_catalogo(request, id):
-    detalle: object = Poleron.objects.get(id=id)
-    return render(request, 'polerones/detail_poleron.html',{
-        'detalle':detalle
-    })
-
-
-@login_required
-def catalogo_chaquetas(request):
-    chaquetas = Chaqueta.objects.all()
-    return render(request, 'chaquetas/catalogo_chaquetas.html',{
-        'chaquetas':chaquetas
-    })
-
-@login_required
-def detail_chaqueta(request, id):
-    detalle = Chaqueta.objects.get(id=id)
-    return render(request, 'chaquetas/detail_chaqueta.html', {
-        'detalle':detalle
-    })
-
-
-
-@login_required
-def catalogo_poleras(request):
-    poleras = Polera.objects.all()
-    return render(request, 'poleras/catalogo_poleras.html', {
-        'poleras': poleras
-    })
-
-
-@login_required
-def detail_polera(request, id):
-    detail = Polera.objects.get(id=id)
-    return render(request, 'poleras/detail_polera.html', {
-        'detalle':detail
-    } )
+    detalle_producto = Productos.objects.get(id=id)
+    return render(request, 'detail_producto.html', {'detalle':detalle_producto})

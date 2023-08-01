@@ -1,0 +1,40 @@
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+
+<!-- <h1>Catálogo</h1> -->
+<section>
+    <div class="container-fluid">
+      <div class="row text-center catalogo_titulo p-3">
+        <h1 class="texto_encabezado">{{productos.categoria}}</h1>
+      </div>
+    </div>
+
+    <div class="container-fluid card_polerones d-flex alingn-items-center justify-content-end">
+                <div class="row row-col-4 text-center g-3">
+            {% for producto in productos %}
+            <div class="col flex">
+                <div class="card" style="width: 17rem;">
+                    <img src="{{ producto.imagen.url }}" class="card-img-top" alt="imagen producto">
+                    <div class="card-body">
+                      <h5 class="card-title">Marca: <span class="span_detalle">{{producto.marca}}</span></h5>
+                    </div>
+                    
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Talla: <span class="span_detalle">{{producto.talla}}</span></li>
+                      <li class="list-group-item">Precio: <span class="span_detalle">${{producto.precio}}</span></li>
+                      <li class="list-group-item">Stock: <span class="span_detalle">{{producto.stock}}</span></li>
+                    </ul>
+                    <div class="card-body">
+                      <a href="{% url 'detail_producto' producto.id %}" class="card-link"><button class="btn btn-primary">Detalle</button></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+

@@ -8,7 +8,7 @@
         <div class="row p-3">
             <div class="col-lg-5 col-md-7">
                 <div>
-                    <img src="{{detalle.imagen.url}}" alt="poleron" class="rounded-circle w-100">
+                    <img src="{{detalle.imagen.url}}" alt="{{detalle.marca}}" class="rounded-circle w-100">
                 </div>
             </div>
                 <div class="col-lg-7 col-md-5">
@@ -44,7 +44,7 @@
                         </table>
                     </div>
                 <div class="col p-4">
-                    <a href="{% url 'catalogo_chaquetas' %}"><button class="btn btn-warning m-2">Volver al catálogo</button></a> 
+                    <a href="{% url 'catalogo_productos' detalle.categoria %}"><button class="btn btn-warning m-2">Volver al catálogo</button></a> 
                     <a href="{% url 'contact' %}"><button class="btn btn-success">Contactar</button></a>   
                 </div>
             </div>

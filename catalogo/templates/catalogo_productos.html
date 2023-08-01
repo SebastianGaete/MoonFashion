@@ -15,7 +15,7 @@
             {% for producto in productos %}
             <div class="col flex">
                 <div class="card" style="width: 17rem;">
-                    <img src="{{chaqueta.imagen.url}}" class="card-img-top" alt="imagen chaqueta">
+                    <img src="{{ producto.imagen.url }}" class="card-img-top" alt="imagen producto">
                     <div class="card-body">
                       <h5 class="card-title">Marca: <span class="span_detalle">{{producto.marca}}</span></h5>
                     </div>
@@ -26,7 +26,7 @@
                       <li class="list-group-item">Stock: <span class="span_detalle">{{producto.stock}}</span></li>
                     </ul>
                     <div class="card-body">
-                      <a href="#" class="card-link"><button class="btn btn-primary">Detalle</button></a>
+                      <a href="{% url 'detail_producto' producto.id %}" class="card-link"><button class="btn btn-primary">Detalle</button></a>
                     </div>
                 </div>
             </div>

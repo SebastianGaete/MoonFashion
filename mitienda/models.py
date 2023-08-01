@@ -1,5 +1,6 @@
 from django.db import models
 
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Interesado(models.Model):
@@ -10,3 +11,7 @@ class Interesado(models.Model):
     tipo_entrega = models.CharField(max_length=100, verbose_name='Tipo de entrega')
     mensaje = models.TextField(verbose_name='Mensaje', default='Sin mensaje')
     fecha_solicitud = models.DateField(auto_now_add=True, verbose_name='Fecha de solicitud')
+
+
+class Comentario(models.Model):
+    pass

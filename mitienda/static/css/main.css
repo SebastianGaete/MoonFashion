@@ -15,7 +15,6 @@
     width: 60px;
 }
 
-
 .navbar-nav{
     display: flex;
     justify-content: end;
@@ -29,6 +28,18 @@
 
 .nav-link:hover{
     color: rgb(234, 238, 189);
+}
+
+.navegacion_catalogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+}
+
+.nav_catalogo{
+    background-color: rgb(72, 52, 90);
 }
 
 /* estilo icono */
@@ -45,12 +56,13 @@
     color: black;
 }
 
+
+
 /* estilo hamburgesa */
 .navbar-toggler{
     background-color: white;
     font-size: 20px;
 }
-
 
 
 /* SECCION HERO */
@@ -76,12 +88,6 @@
     text-shadow: 6px 6px 10px rgba(0, 0, 0, 0.5);
     font-size: 30px;
 }
-
-.navegacion_catalogo{
-    display: flex;
-    justify-content: center;
-}
-
 
 @media (max-width: 767px) {
     .hero__text h1, h2{
@@ -128,7 +134,7 @@
 }
 
 
-/* CATALOGO */
+/* CATALOGO PRODUCTOS */
 
 .card_polerones{
     margin: 10px 0 100px 0;
@@ -150,7 +156,7 @@
 }
 
 
-/* DETALLE POLERON */
+/* DETALLE PRODUCTO */
 .contenedor_imagen img{
     width: 400px;
     background-color: black;
@@ -167,15 +173,6 @@
         width: 200px;
     }
 }
-
-
-/* ENVIO SATISFACTORIO */
-.icono_enviado{
-    color: rgb(3, 119, 3);
-    font-size: 130px;
-}
-
-
 
 /* ABOUT */
 .contenedor_about{

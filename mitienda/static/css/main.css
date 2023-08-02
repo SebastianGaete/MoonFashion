@@ -192,11 +192,33 @@
     .about{
         display: flex;
         flex-direction: column;
+        
     }
 }
-
 
 .about_icono{
     color: rgb(99, 60, 105);
     font-size: 80px;
+}
+
+.comentarios{
+    display: flex;
+    justify-content: center;
+}
+
+.boton_comentario{
+    color: rgb(255, 255, 255);
+    background-color: rgb(99, 60, 105);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+.cabeza_comentario{
+    background-color: rgb(99, 60, 105);
+}
+
+.cabeza__tag{
+    color: aliceblue;
 }

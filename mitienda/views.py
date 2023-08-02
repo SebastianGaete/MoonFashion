@@ -20,7 +20,7 @@ def about_comentario(request):
         nuevo_comentario.save()
         return redirect('about')
 
-    comentarios = Comentario.objects.all()
+    comentarios = Comentario.objects.all().order_by('-fecha_publicacion')
     return render(request, 'pages/about.html', {'comentarios': comentarios})
 
 

@@ -52,7 +52,7 @@
                     </div>
                     
                     <div class="text-end">
-                        <button type="submit" class=" mt-3 btn btn-secondary">Enviar</button>
+                        <button type="submit" class="mt-3 boton_comentario">Enviar</button>
                     </div>
                 
                 </form>
@@ -62,13 +62,13 @@
 
 
     <div class="container-fluid mt-5">
-        <div class="row d-flex justify-content-center align-items-center">
+        <div class="row comentarios">
             <div class="col col-lg-5">
                 {% for comentario in comentarios %}
                     <div class="card mb-3">
-                        <div class="card-header d-flex justify-content-between align-items-center">
-                            <h5>@ - {{comentario.usuario}}</h5>
-                            <p>{{comentario.fecha_publicacion|date:"d-m-Y"}}</p>
+                        <div class="card-header cabeza_comentario d-flex justify-content-between align-items-center">
+                            <h5 class="cabeza__tag">@ - {{comentario.usuario}}</h5>
+                            <p class="cabeza__tag">{{comentario.fecha_publicacion|date:"d-m-Y"}}</p>
                         </div>
                         <div class="card-body">
                             <p class="card-text">{{comentario.cuerpo}}</p>

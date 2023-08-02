@@ -16,30 +16,37 @@
 				{% csrf_token %}
 	
 					<div class="mb-2">
-						<label for="nombre"></label>
+						<label for="nombre">Nombres</label>
 						<input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" required>
 					</div>
 	
 					<div class="mb-2">
-						<label for="apellido"></label>
+						<label for="apellido">Apellidos</label>
 						<input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido" required>
 					</div>
 	
 					<div class="mb-2">
-						<label for="telefono"></label>
-						<input type="text" class="form-control" name="telefono" id="telefono" placeholder="Teléfono: 9 99442288">
+						<label for="telefono">Teléfono</label>
+						<input type="text" class="form-control" name="telefono" id="telefono" placeholder="9 99442288">
 					</div>
 	
 					<div class="mb-2">
-						<label for="email"></label>
+						<label for="email">Correo</label>
 						<input type="email" class="form-control" name="email" id="email" placeholder="nombre@gmail.com" required>
 					</div>
 					
+
 					<div class="mb-2">
-						<label for="tipo_entrega"></label>
-						<input type="text" class="form-control" name="tipo_entrega" id="tipo_entrega" placeholder="Envío domicilio / Entrega presencial" required>
+						<p class="metodo_entrega">Método de entrega</p>
+						<div class="card">
+							<select class="option_option" name="tipo_entrega" id="tipo_entrega">
+								<label for="tipo_entrega"></label>
+								<option  value="Entrega presencial" class="form-control">Entrega presencial</option>
+								<option  value="Envío a domicilio" class="form-control">Envío a domicilio</option>
+							</select>
+						</div>
 					</div>
-	
+
 					<div class="mb-2">
 						<label for="mensaje"></label>
 						<textarea name="mensaje" id="mensaje"rows="3" class="border-1 form-control" placeholder="Deja un mensaje"></textarea>

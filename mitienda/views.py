@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Interesado
+from .models import Interesado, Comentario
 
 from django.contrib.auth.decorators import login_required
 # Create your views here.
@@ -9,9 +9,20 @@ from django.contrib.auth.decorators import login_required
 def home(request):
     return render(request, 'index.html')
 
+
 @login_required
-def about(request):
-    return render(request, 'pages/about.html')
+def about_comentario(request):
+    if request.method == 'POST':
+        usuario = request.user
+        cuerpo = request.POST['cuerpo']
+
+        nuevo_comentario = Comentario.objects.create(usuario=usuario, cuerpo=cuerpo)
+        nuevo_comentario.save()
+        return redirect('about')
+
+    comentarios = Comentario.objects.all()
+    return render(request, 'pages/about.html', {'comentarios': comentarios})
+
 
 @login_required
 def contact(request):
@@ -45,5 +56,4 @@ def contact(request):
 @login_required
 def envio_formulario(request):
     return render(request, 'pages/envio_formulario.html')
-
 

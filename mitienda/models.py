@@ -14,4 +14,6 @@ class Interesado(models.Model):
 
 
 class Comentario(models.Model):
-    pass
+    usuario = models.ForeignKey(User, on_delete=models.RESTRICT, verbose_name='Usuario')
+    cuerpo = models.TextField(null=False, blank=False)
+    fecha_publicacion = models.DateTimeField(auto_now_add=True)

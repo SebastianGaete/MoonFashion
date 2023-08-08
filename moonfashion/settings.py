@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'cloudinary'
 ]
 
-CSRF_TRUSTED_ORIGINS = ['moonfashion.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://moonfashion.up.railway.app']
 
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',

@@ -1,0 +1,52 @@
+:root{
+    --texto: #000000;
+    --primario: #c5c8ff;
+    --secundario: #9c6ac2;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.background{
+    max-width: auto;
+    background-image: url(../login_register.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh
+}
+.card_login{
+    border: solid 3px rgba(161, 121, 121, 0.458);
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+.container_button{
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+}
+.button_action{
+    background-color: var(--secundario);
+    color: var(--texto);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 100px;
+}
+.button_action:action{
+    background-color: var(--primario);
+    color: var(--secundario);
+}
+.button_link{
+    background-color: var(--primario);
+    color: #4a4a9f;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+}
+.button_link:hover{
+    color: var(--primario);
+    background-color: var(--secundario);
+}
+.danger_color{
+    color: rgb(255, 0, 0);
+    font-weight: 500;
+}

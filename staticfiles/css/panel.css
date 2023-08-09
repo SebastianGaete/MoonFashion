@@ -10,7 +10,7 @@
 }
 .background{
     max-width: auto;
-    background-image: url(../login_register.webp);
+    background-image: url(../images/login_register.webp);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh

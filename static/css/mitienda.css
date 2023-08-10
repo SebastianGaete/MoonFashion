@@ -70,11 +70,17 @@
     background-color: var(--rojo);
     color: var(--blanco);
 }
-
-.logout:hover{
-    color: var(--rojo);
-    border-bottom: 2px solid var(--rojo);
+.logout{
+    font-size: 25px;
 }
+
+.logout{
+    color: var(--rojo);
+}
+.logout:hover{
+    color: rgb(216, 75, 75)
+}
+
 
 
 /* SECCION HERO */

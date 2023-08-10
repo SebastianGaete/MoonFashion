@@ -20,6 +20,12 @@ class Comentario(models.Model):
 
 
 class Presentacion_prenda(models.Model):
+    categoria = models.ForeignKey(Categoria, to_field='nombre', on_delete=models.RESTRICT, blank=True, null=True)
     tipo = models.CharField(max_length=30)
     descripcion = models.TextField()
     imagen = models.ImageField(upload_to='prendas_presentacion')
+
+    def __str__(self):
+        return self.tipo
+
+

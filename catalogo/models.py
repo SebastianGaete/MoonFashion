@@ -4,6 +4,9 @@ from django.db import models
 class Categoria(models.Model):
     nombre = models.CharField(primary_key=True, max_length=40, verbose_name='Nombre')
     fecha_creacion = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creacion')
+
+    def __str__(self):
+        return self.nombre
        
 
 class Productos(models.Model):

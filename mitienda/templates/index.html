@@ -30,7 +30,7 @@
             <div class="col-lg-6 col-md-6 col-12 contenedor_elementos">
                 <h4>{{ prenda.tipo }}</h4>
                 <p>{{ prenda.descripcion  }}</p>
-                <button class="button_elementos">Descubre</button>
+                <a href="{% url 'catalogo_productos' prenda.categoria %}"><button class="button_elementos">Descubre</button></a>
             </div>
             <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-center align-items-center">
                 <img src="{{ prenda.imagen.url }}" loading="lazy" class="img_subhero img-fluid" alt="">

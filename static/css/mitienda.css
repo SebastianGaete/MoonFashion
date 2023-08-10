@@ -1,76 +1,62 @@
-/* ESTILOS CSS */
+:root{
+    --fuente: 'Almarai', sans-serif;
+    --blanco: #f1f0f0;
+    --suave: #f3f3e7;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--fuente);
 }
-.root{
-    --fuente: font-family: 'Montserrat', sans-serif;
-}
-
 
 /* BARRA DE NAVEGACIÓN */
+.navbar{
+    background-color: var(--blanco);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    transition: background-color 0.3s ease-in-out;
+}
+@media (max-width: 426px ) {
+   .navbar{
+    position: static;
+   }
+}
 
- .logo_nav{
+.navbar:hover{
+    background-color: var(--suave);
+}
+.navbar-toggler {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none !important;
+}
+.menu-deplegable{
+    border: none;
+}
+
+
+.logo_nav{
     width: 60px;
 }
-
-.navbar-nav{
-    display: flex;
-    justify-content: end;
-    align-items: end;
-}
-
 .nav-link{
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 17px;
 }
 
-.nav-link:hover{
-    color: rgb(234, 238, 189);
-}
 
-.navegacion_catalogo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-
-}
-
-.nav_catalogo{
-    background-color: rgb(99, 60, 105);
-}
-
-/* estilo icono */
- .boton_home{
-    background-color: white;
-    border-radius: 5px;
-    padding: 0 20px;
-    color: black;
-    font-size: 20px;
-}
-
-.boton_home:hover{
-    background-color: rgb(234, 238, 189);
-    color: black;
-}
-
-
-
-/* estilo hamburgesa */
-.navbar-toggler{
-    background-color: white;
-    font-size: 20px;
-}
 
 
 /* SECCION HERO */
 .hero{
-    background-image: url("../images/hero.jpg");
+    background-image: url("../images/fondo.webp");
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    height: 750px;
 }
 
 .hero__text{

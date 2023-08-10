@@ -1,23 +1,20 @@
 {% load static %}
 
 <header>
-    <nav class="navbar navbar-expand-md bg-black">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-md">
+        <div class="container">
             <a href="{% url 'home' %}"><img src="{% static 'images/logomoon.webp'%}" alt="Logo MoonFashion" class="logo_nav"></a>
             
-    
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
     
             <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarNav">
     
-                <ul class="navbar-nav align-items-center">
+                <ul class="navbar-nav align-items-center d-flex justify-content-end align-items-center">
                     {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="{% url 'home' %}">
-                                <i class="bi bi-house-door btn boton_home"></i>
-                            </a>
+                            <a class="nav-link" aria-current="page" href="{% url 'home' %}">Inicio</a>
                         </li>
         
                         <li class="nav-item">
@@ -30,6 +27,19 @@
 
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
+                        </li>
+
+                        <li>
+                            <div class="dropdown-center">
+                                <button class="border-none" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Catálogo de productos
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-dark text-center  menu-desplegable">
+                                  <li><a class="dropdown-item" href="{% url 'catalogo_productos' producto='polerones' %}">Polerones</a></li>
+                                  <li><a class="dropdown-item" href="{% url 'catalogo_productos' producto='poleras' %}">Poleras</a></li>
+                                  <li><a class="dropdown-item" href="{% url 'catalogo_productos' producto='chaquetas' %}">Chaquetas</a></li>
+                                </ul>
+                            </div>
                         </li>
                     {% endif %}
 
@@ -45,36 +55,3 @@
         </div>
       </nav>
 </header>
-
-<section>
-    <div class="container-fluid p-0 nav_catalogo d-flex justify-content-end">
-        <div class="row">
-            <div class="col">
-                <div class="dropdown-center">
-                    <button class="btn btn-light rounded-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Catálogo de productos
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark text-center">
-                      <li><a class="dropdown-item" href="{% url 'catalogo_productos' producto='polerones' %}">Polerones</a></li>
-                      <li><a class="dropdown-item" href="{% url 'catalogo_productos' producto='poleras' %}">Poleras</a></li>
-                      <li><a class="dropdown-item" href="{% url 'catalogo_productos' producto='chaquetas' %}">Chaquetas</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-<!-- <section>
-    <div class="container-fluid text-center nav_catalogo">
-        <div class="row p-2">
-            <div class="col-lg-12 col-md-6 navegacion_catalogo py-2 ">
-                <a class="text-light text-decoration-none" href="{% url 'catalogo_productos' producto='polerones' %}">Polerones</a>
-                <a class="text-light text-decoration-none" href="{% url 'catalogo_productos' producto='poleras' %}">Poleras</a>
-                <a class="text-light text-decoration-none" href="{% url 'catalogo_productos' producto='chaquetas' %}">Chaquetas</a>
-            </div>
-        </div>
-    </div>    
-</section> -->

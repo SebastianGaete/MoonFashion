@@ -4,7 +4,7 @@
     --suave: #f3f3e7;
     --negro: #000000;
     --rojo: #a24e66;
-    --cafe: #555152;
+    --cafe: #4d4c4c;
 }
 *{
     margin: 0;
@@ -122,7 +122,7 @@
     margin: 13px 0; 
 }
 
-/* PRESENTACION PRODUCTOS */
+/* PRESENTACION PRODUCTOS SUBHERO */
 .columna_subhero{
     margin-top: 70px;
     text-align: center;
@@ -177,7 +177,6 @@
     background-color: var(--rojo);
     color: var(--suave);
 }
-
 @media (max-width: 428px) {
     .fila_prendas{
         margin-top: 40px;
@@ -197,40 +196,33 @@
 }
 
 
-
-
-
-
 /* FOOTER */
-
-.text_footer{
-    color: rgb(234, 238, 189);;
-    font-size: 30px;
-    font-family: 'Montserrat', sans-serif;
+.contenedor_footer{
+    background-color: var(--cafe);
 }
-
-.redes_sociales_lista{
-    list-style: none;
+.enlaces_footer{
+    margin-bottom: 5px;
 }
-
-.redes_sociales_lista li{
-    padding: 9px 14px;
-    margin-right: 40px;
-}
-
-
-.redes_sociales_lista a{
-    color: white;
+.enlaces_footer a{
     text-decoration: none;
+    color: var(--suave);
+    border-bottom: solid 3px var(--rojo);
+}
+.button_footer{
+    border: none;
+    padding: 15px 40px;
+    border-radius: 10px;
+    background-color: var(--rojo);
+    color: var(--suave);
+}
+.redes_sociales i{
+    font-size: 30px;
+    color: var(--rojo);
+}
+.redes_sociales i:hover{
+    color: var(--suave);
 }
 
-.redes_sociales_lista .bi{
-    color: rgb(216, 218, 102);
-    font-size: 25px;
-}
-.redes_sociales_lista .bi:hover{
-    color: white
-}
 
 
 /* CATALOGO PRODUCTOS */

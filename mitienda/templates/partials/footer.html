@@ -1,27 +1,42 @@
 {% load static %}
 
 <footer>
-    <div class="container-fluid bg-black p-4">
-
-        <div class="row">
-            <div class="col text-center text_footer">
-                <p>MoonFashion<i class="bi bi-c-circle"></i></p>
+    <div class="container-fluid text-white py-5 mt-5 contenedor_footer">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <h5>¿Quieres consultar algo?</h5>
+                    <a href="{% url 'contact' %}">
+                        <button class="button_footer">Contacto <i class="bi bi-send-fill"></i></button>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Secciones</h5>
+                    <ul class="list-unstyled">
+                        <li class="enlaces_footer">
+                            <a href="{% url 'home' %}">Inicio</a>
+                        </li>
+                        <li class="enlaces_footer">
+                            <a href="{% url 'about' %}">Nosotros</a>
+                        </li>
+                        <li class="enlaces_footer">
+                            <a href="{% url 'contact' %}">Contáctanos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Síguenos en nuestras redes sociales</h5>
+                    <div class="redes_sociales">
+                        <a href="https://web.facebook.com/profile.php?id=100094511815085" target="_blank" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/0_moonfashion_0/" target="_blank" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col">
-                <ul class="d-flex justify-content-center align-items-center redes_sociales_lista">
-                    <li>
-                        <a href="https://www.instagram.com/0_moonfashion_0/" target="_blank"><i class="bi bi-instagram"></i></a>
-                    </li>
-
-                    <li>
-                        <a href="https://web.facebook.com/profile.php?id=100094511815085&mibextid=ZbWKwL&_rdc=1&_rdr"> <i class="bi bi-facebook"></i></a>
-                    </li>
-                </ul>
-            </div>
+        <div class="row mt-3 text-center">
+            <h5>MoonFashion <i class="bi bi-r-circle"></i> | 2023</h5>
+            <p>Vistete con MoonFashion con el mejor estilo americano</p>
         </div>
-
-    </div>    
+    </div>
 </footer>

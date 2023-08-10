@@ -1,19 +1,48 @@
 {% extends 'layouts/layout.html' %}
-
+{% load static %}
 {% block content %}
 
-
-<div class="hero d-flex align-items-center justify-content-center">
-   <div class="row">
-        <div class="col-lg">
-            <div class="hero__text">
-                <h1>Ropa Americana</h1>
-                <h2>MoonFashion</h2>
-                <p>"Estilo americano para destacar en todos lados"</p>
-            </div>
+<div class="container-fluid p-0">
+    <div class="hero d-flex align-items-center justify-content-center">
+        <div class="row">
+             <div class="col-lg">
+                 <div class="hero__text">
+                     <h1>Ropa Americana</h1>
+                     <h2>MoonFashion</h2>
+                 </div>
+             </div>
         </div>
-   </div>
+     </div>     
 </div>
 
+<div class="separador"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col columna_subhero">
+            <h3>Te ayudamos a escoger el mejor estilo para ti</h3>
+            <p>Las mejores prendas para sentirte a la moda</p>
+        </div>
+    </div>
+    <!-- Presentacion Prendas -->
+    {% for prenda in prendas %}
+    <div class="row fila_prendas">
+            <div class="col-lg-6 col-md-6 col-12 contenedor_elementos">
+                <h4>{{ prenda.tipo }}</h4>
+                <p>{{ prenda.descripcion  }}</p>
+                <a href="{% url 'catalogo_productos' prenda.categoria %}"><button class="button_elementos">Descubre</button></a>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12 d-flex justify-content-center align-items-center">
+                <img src="{{ prenda.imagen.url }}" loading="lazy" class="img_subhero img-fluid" alt="">
+            </div>
+        </div>
+        {% endfor %}
+</div>
 
 {% endblock %}
+
+
+
+
+<!-- Presión -->
+<!-- 1278864 -->

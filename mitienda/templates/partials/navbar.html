@@ -1,66 +1,83 @@
 {% load static %}
 
 <header>
+<<<<<<< HEAD
     <nav class="navbar navbar-expand-md bg-black">
         <div class="container-fluid">
             <a href="{% url 'home' %}"><img src="{% static 'images/logomoon.webp'%}" alt="logo" class="logo_nav"></a>
+=======
+        <nav class="navbar navbar-expand-md">
+            <div class="container">
+                <a href="{% url 'home' %}"><img src="{% static 'images/logomoon.webp'%}" alt="Logo MoonFashion" class="logo_nav"></a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarNav">
+        
+                    <ul class="navbar-nav align-items-center d-flex justify-content-end align-items-center">
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'home' %}">Inicio</a>
+                            </li>
+    
+                           
+                            <li class="nav-item">
+                                <button type="button" class="button_menu" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    Tienda
+                                </button>
+                                
+                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <a href="{% url 'catalogo_productos' 'polerones' %}">Polerones</a>
+                                                <a href="{% url 'catalogo_productos' 'poleras' %}">Poleras</a>
+                                                <a href="{% url 'catalogo_productos' 'chaquetas' %}">Chaquetas</a>  
+                                            </div>
+                                            <div class="text-end my-3 mx-3">
+                                                <button type="button" class="button_close_menu" data-bs-dismiss="modal">
+                                                    Cancelar
+                                                </button>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+>>>>>>> ramatrabajo2
             
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'about' %}">Nosotros</a>
+                            </li>
+            
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'contact' %}">Contáctanos</a>
+                            </li>
     
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                            <li class="nav-item">
+                                <a class="nav-link logout" href="{% url 'logout' %}" title="Cerrar Sesión"><i class="bi bi-box-arrow-right"></i></a>
+                            </li>
     
-            <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarNav">
+                            
+                        {% endif %}
     
-                <ul class="navbar-nav align-items-center">
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{% url 'home' %}">
-                            <i class="bi bi-house-door btn boton_home"></i>
-                        </a>
-                    </li>
-    
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about' %}">Nosotros</a>
-                    </li>
-    
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact' %}">Contáctanos</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
-                    </li>
-                    {% endif %}
-
-                    {% if user.is_superuser %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'admin:index' %}">Agregar</a>
-                        </li>
-                    {% endif %}
-                    
-                </ul>
-    
-            </div>
-        </div>
-      </nav>
-</header>
-
-<section>
-    <div class="container-fluid p-0 nav_catalogo d-flex justify-content-end">
-        <div class="row">
-            <div class="col">
-                <div class="dropdown-center">
-                    <button class="btn btn-light rounded-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Catálogo de productos
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark text-center">
-                      <li><a class="dropdown-item" href="{% url 'catalogo_productos' producto='polerones' %}">Polerones</a></li>
-                      <li><a class="dropdown-item" href="{% url 'catalogo_productos' producto='poleras' %}">Poleras</a></li>
-                      <li><a class="dropdown-item" href="{% url 'catalogo_productos' producto='chaquetas' %}">Chaquetas</a></li>
+                        {% if user.is_superuser %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'admin:index' %}">Agregar</a>
+                            </li>
+                        {% endif %}
+                        
                     </ul>
+        
                 </div>
             </div>
+<<<<<<< HEAD
         </div>
     </div>
 </section>
+=======
+        </nav>
+</header>
+>>>>>>> ramatrabajo2

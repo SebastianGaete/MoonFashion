@@ -1,5 +1,5 @@
 from django.db import models
-
+from catalogo.models import Categoria
 from django.contrib.auth.models import User
 # Create your models here.
 
@@ -17,3 +17,15 @@ class Comentario(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.RESTRICT, verbose_name='Usuario')
     cuerpo = models.TextField(null=False, blank=False)
     fecha_publicacion = models.DateTimeField(auto_now_add=True)
+
+
+class Presentacion_prenda(models.Model):
+    categoria = models.ForeignKey(Categoria, to_field='nombre', on_delete=models.RESTRICT, blank=True, null=True)
+    tipo = models.CharField(max_length=30)
+    descripcion = models.TextField()
+    imagen = models.ImageField(upload_to='prendas_presentacion')
+
+    def __str__(self):
+        return self.tipo
+
+

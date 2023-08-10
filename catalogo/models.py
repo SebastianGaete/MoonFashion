@@ -4,6 +4,9 @@ from django.db import models
 class Categoria(models.Model):
     nombre = models.CharField(primary_key=True, max_length=40, verbose_name='Nombre')
     fecha_creacion = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creacion')
+
+    def __str__(self):
+        return self.nombre
        
 
 class Productos(models.Model):
@@ -20,7 +23,7 @@ class Productos(models.Model):
     talla = models.CharField(max_length=2, choices=TALLAS, verbose_name='Tallas')
     precio = models.CharField(max_length=20, verbose_name='Precio')
     stock = models.IntegerField(default=1, verbose_name='Stock')
-    imagen = models.ImageField(blank=False, upload_to='poleras/images', verbose_name='Imagen')
+    imagen = models.ImageField(blank=False, upload_to='prendas_catalogo', verbose_name='Imagen')
 
     def __str__(self):
         return self.marca

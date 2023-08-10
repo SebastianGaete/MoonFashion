@@ -7,15 +7,17 @@
 
         <div class="row p-3">
             <div class="col-lg-5 col-md-7">
-                <div>
+                <p class="ruta">Inicio > Tienda > {{detalle.categoria}} - {{ detalle.marca }}</p>
+                <div class="contenedor_detalle_img">
                     <img src="{{detalle.imagen.url}}" alt="{{detalle.marca}}" class="rounded-circle w-100">
                 </div>
             </div>
-                <div class="col-lg-7 col-md-5">
-                    <div class="container  contenedor_info">
+
+            <div class="col-lg-7 col-md-5">
+                    <div class="container">
                         <table class="table table-md table-striped">
 
-                            <thead class="cabecera_tabla">
+                            <thead>
                             <h3 class="texto_encabezado m-4">Detalle de prenda</h3>
                             </thead>
 
@@ -43,9 +45,15 @@
                             </tbody>
                         </table>
                     </div>
+
                 <div class="col p-4">
-                    <a href="{% url 'catalogo_productos' detalle.categoria %}"><button class="btn btn-warning m-2">Volver al catálogo</button></a> 
-                    <a href="{% url 'contact' %}"><button class="btn btn-success">Contactar</button></a>   
+                    <a href="{% url 'catalogo_productos' detalle.categoria %}">
+                        <button class="button_volver m-2"><i class="bi bi-arrow-bar-left"></i> Volver</button>
+                    </a> 
+
+                    <a href="{% url 'contact' %}"> 
+                        <button class="button_contact">Contactar</button>
+                    </a>   
                 </div>
             </div>
         </div>

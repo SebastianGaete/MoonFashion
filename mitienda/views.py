@@ -12,6 +12,7 @@ def home(request):
 
 @login_required
 def about_comentario(request):
+    mensaje = ''
     if request.method == 'POST':
         usuario = request.user
         cuerpo = request.POST['cuerpo']
@@ -20,8 +21,12 @@ def about_comentario(request):
         nuevo_comentario.save()
         return redirect('about')
 
-    comentarios = Comentario.objects.all().order_by('-fecha_publicacion')
-    return render(request, 'pages/about.html', {'comentarios': comentarios})
+    else:
+        comentarios = Comentario.objects.all().order_by('-fecha_publicacion')
+        if not comentarios :
+            mensaje = 'Se la primera persona en comentar!'
+
+        return render(request, 'pages/about.html', {'comentarios': comentarios, 'mensaje':mensaje})
 
 
 @login_required

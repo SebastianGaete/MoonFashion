@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Interesado, Comentario
+from .models import Interesado, Comentario, Presentacion_prenda
 # Register your models here.
 
 
@@ -11,3 +11,8 @@ class AdminFormulario(admin.ModelAdmin):
 @admin.register(Comentario)
 class AdminComentario(admin.ModelAdmin):
     readonly_fields = ('fecha_publicacion',)
+
+@admin.register(Presentacion_prenda)
+class AdminPresentacion_prenda(admin.ModelAdmin):
+    pass
+

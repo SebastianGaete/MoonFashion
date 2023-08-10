@@ -20,7 +20,7 @@ class Productos(models.Model):
     talla = models.CharField(max_length=2, choices=TALLAS, verbose_name='Tallas')
     precio = models.CharField(max_length=20, verbose_name='Precio')
     stock = models.IntegerField(default=1, verbose_name='Stock')
-    imagen = models.ImageField(blank=False, upload_to='poleras/images', verbose_name='Imagen')
+    imagen = models.ImageField(blank=False, upload_to='prendas_catalogo', verbose_name='Imagen')
 
     def __str__(self):
         return self.marca
